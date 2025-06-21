@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edi Market - Beranda</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start px-4 py-10 text-white">
+
+  <!-- Judul -->
+  <h1 class="text-4xl font-bold mb-6 text-center leading-tight">
+    ᴇᴅɪ <span class="text-yellow-400">ᴍᴀʀᴋᴇᴛ</span><br>
+    <span class="text-base font-normal tracking-wide">𝙅𝙖𝙨𝙖 𝙊𝙣𝙡𝙞𝙣𝙚 • 𝙎𝙘𝙧𝙞𝙥𝙩 • 𝙎𝙤𝙨𝙢𝙚𝙙 • 𝙏𝙤𝙥 𝙐𝙥</span>
+  </h1>
+
+  <!-- Menu Utama -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mb-10">
+    <a href="topup.html" class="card p-6 text-white text-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/3603/3603244.png" class="mx-auto w-16 h-16 mb-4" alt="Top Up Game">
+      <h2 class="text-xl font-semibold">Top Up Game</h2>
+      <p class="text-sm mt-1">Free Fire, ML, Genshin, dll</p>
+    </a>
+
+    <a href="script-bot.html" class="card p-6 text-white text-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/2736/2736180.png" class="mx-auto w-16 h-16 mb-4" alt="Script Bot">
+      <h2 class="text-xl font-semibold">Script & Bot</h2>
+      <p class="text-sm mt-1">Bot Jaga, Invite, dsb</p>
+    </a>
+
+    <a href="suntik-sosmed.html" class="card p-6 text-white text-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/3687/3687412.png" class="mx-auto w-16 h-16 mb-4" alt="Suntik Sosmed">
+      <h2 class="text-xl font-semibold">Suntik Sosmed</h2>
+      <p class="text-sm mt-1">IG / TikTok Followers, Like</p>
+    </a>
+  </div>
+
+  <!-- Panduan -->
+  <div class="max-w-2xl w-full bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 text-sm leading-relaxed">
+    <h2 class="text-xl font-semibold mb-3 text-yellow-400">Cara Penggunaan</h2>
+    <ol class="list-decimal list-inside space-y-2">
+      <li>Pilih menu yang kamu butuhkan.</li>
+      <li>Masukkan data seperti ID game / username sosmed.</li>
+      <li>Pilih layanan atau jumlah yang diinginkan.</li>
+      <li>Klik <strong>"Pesan Sekarang"</strong> dan kirim bukti pembayaran.</li>
+      <li>Pesanan akan diproses manual / otomatis.</li>
+    </ol>
+  </div>
+
+</body>
+</html>

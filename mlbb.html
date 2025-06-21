@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Top Up Mobile Legends</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white; min-height: 100vh;
+      display:flex; justify-content:center; align-items:center; padding:20px;
+    }
+    .btn-back {
+      position:fixed; top:15px; right:15px;
+      background:none; border:none;
+      color:#00ffe1; font-size:24px;
+      cursor:pointer; font-weight:600;
+      padding:5px 10px; transition:color .3s ease;
+      z-index:1000;
+    }
+    .btn-back:hover { color:#00c7b7; }
+    .container {
+      background-color: rgba(255,255,255,0.05);
+      border-radius:16px; padding:30px;
+      width:100%; max-width:400px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.3);
+    }
+    h1 { text-align:center; margin-bottom:25px;
+      font-weight:600; color:#00ffe1;
+    }
+    label { display:block; margin-bottom:8px;
+      font-weight:600; font-size:14px;
+    }
+    input, select {
+      width:100%; padding:12px 15px;
+      border:none; border-radius:10px;
+      margin-bottom:20px; font-size:16px;
+      background-color:#1a1a2e; color:white;
+    }
+    button {
+      width:100%; padding:15px;
+      background-color:#00ffe1; color:#1a1a2e;
+      font-weight:700; font-size:18px;
+      border:none; border-radius:12px;
+      cursor:pointer; transition:background-color .3s ease;
+    }
+    button:hover { background-color:#00c7b7; }
+    .info {
+      margin-top:20px; font-size:14px;
+      color:#a0a0a0; text-align:center;
+    }
+  </style>
+</head>
+<body>
+<button
+  onclick="window.history.back()"
+  style="
+    position: fixed;
+    top: 25px;
+    right: 95px;
+    background: none;
+    border: none;
+    color: #00ffe1;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 5px;
+    user-select: none;
+    font-weight: 600;
+  "
+  aria-label="Kembali"
+>
+   ⬅️ Kembali 
+</button>
+  <div class="container">
+    <h1>Top Up Mobile Legends</h1>
+    <form id="topupForm" autocomplete="off">
+      <label for="playerId">Masukkan ID Player Mobile Legends</label>
+      <input type="text" id="playerId" name="playerId" placeholder="Contoh: 123456789" required maxlength="30"/>
+
+      <label for="nominal">Pilih Nominal Diamond</label>
+      <select id="nominal" name="nominal" required>
+  <option value="" disabled selected>-- Pilih Nominal --</option>
+  <option value="12">12 Diamond - Rp7.000</option>     <!-- Untung ±2k -->
+  <option value="28">28 Diamond - Rp14.000</option>    <!-- Untung ±2k -->
+  <option value="36">36 Diamond - Rp17.000</option>    <!-- Untung ±3k -->
+  <option value="56">56 Diamond - Rp25.000</option>    <!-- Untung ±3k -->
+  <option value="85">85 Diamond - Rp36.000</option>    <!-- Untung ±4k -->
+  <option value="170">170 Diamond - Rp69.000</option>  <!-- Untung ±6k -->
+  <option value="284">284 Diamond - Rp110.000</option> <!-- Untung ±7k -->
+  <option value="568">568 Diamond - Rp215.000</option> <!-- Untung ±7k -->
+  <option value="878">878 Diamond - Rp320.000</option> <!-- Untung ±7k -->
+</select>
+
+      <button type="submit">Beli Sekarang</button>
+    </form>
+    <div class="info">
+      * Pastikan ID Player & nominal benar.<br/>
+      * Harga mengikuti Codashop (GoPay/Tri/Ovo).<br/>
+      * Administrasi manual oleh admin.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('topupForm').addEventListener('submit', e=>{
+      e.preventDefault();
+      const id = e.target.playerId.value.trim();
+      const sel = e.target.nominal;
+      const nominalText = sel.options[sel.selectedIndex].text;
+      const metode = e.target.metode.value.toUpperCase();
+
+      if(!id){
+        alert('Masukkan ID player.');
+        return;
+      }
+
+      const url = `pembayaran.html?game=ml&playerId=${encodeURIComponent(id)}&nominal=${encodeURIComponent(nominalText)}&metode=${metode}`;
+      alert(`ID: ${id}\n${nominalText}\nMetode: ${metode}\n\nAnda akan diarahkan ke pembayaran.`);
+      window.location.href = url;
+    });
+  </script>
+
+</body>
+</html>

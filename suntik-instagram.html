@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pesan Suntik Instagram</title>
+  <script>
+    const hargaData = {
+      "Like Instagram": {
+        100: "600P",
+        200: "1K",
+        300: "1,6K",
+        400: "2K",
+        500: "2,6K",
+        600: "3K",
+        700: "4K",
+        800: "5K",
+        900: "6K",
+        1000: "8K",
+        10000: "46K",
+        100000: "480K"
+      },
+      "Followers Instagram": {
+        100: "5K",
+        200: "8K",
+        300: "10K",
+        400: "12K",
+        500: "15K",
+        600: "18K",
+        700: "20K",
+        800: "22K",
+        900: "25K",
+        1000: "32K",
+        10000: "380K"
+      },
+      "View Reel Instagram": {
+        1000: "1K",
+        2000: "2K",
+        3000: "3K",
+        4000: "4K",
+        5000: "5K",
+        6000: "6K",
+        7000: "7K",
+        8000: "8K",
+        9000: "9K",
+        10000: "10K",
+        100000: "50K"
+      }
+    };function kirimPesan() {
+  const tipe = document.getElementById("tipe").value;
+  const jumlah = document.getElementById("jumlah").value;
+  const harga = hargaData[tipe][jumlah];
+
+  if (!harga) {
+    alert("Harga tidak tersedia untuk pilihan ini.");
+    return;
+  }
+
+  const pesan = `Halo. Mau pesen%0ATipe: ${tipe}%0AJumlah: ${jumlah}%0AHarga: ${harga}%0ASS transaksi:`;
+  const waUrl = `https://wa.me/6285847209163?text=${pesan}`;
+  window.open(waUrl, '_blank');
+}
+
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+  <button
+  onclick="window.history.back()"
+  style="
+    position: fixed;
+    top: 25px;
+    right: 235px;
+    background: none;
+    border: none;
+    color: #00ffe1;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 5px;
+    user-select: none;
+    font-weight: 600;
+  "
+  aria-label="Kembali"
+>
+   ⬅️ Kembali 
+</button>
+  <div class="bg-gray-800 p-6 rounded-xl shadow-lg max-w-md w-full">
+    <h1 class="text-2xl font-bold mb-4 text-center text-pink-400">📸 Pesan Suntik Instagram</h1>
+    <p class="text-xs mb-4 text-center text-gray-300 italic">ᴊᴀsᴀ sᴜɴᴛɪᴋ sᴏsᴍᴇᴅ ʙʏ ᴇᴅɪ ᴍᴀʀᴋᴇᴛ<br/>ᴘᴇsᴀɴᴀɴ ʙɪsᴀ ᴅɪ ᴄᴏsᴛᴜᴍ sᴇsᴜᴀɪ ᴍɪɴᴀᴛ!</p><label class="block mb-2">Tipe Layanan:</label>
+<select id="tipe" class="w-full mb-4 p-2 rounded bg-gray-700 text-white">
+  <option>Like Instagram</option>
+  <option>Followers Instagram</option>
+  <option>View Reel Instagram</option>
+</select>
+
+<label class="block mb-2">Jumlah:</label>
+<select id="jumlah" class="w-full mb-6 p-2 rounded bg-gray-700 text-white">
+  <option value="100">100</option>
+  <option value="200">200</option>
+  <option value="300">300</option>
+  <option value="400">400</option>
+  <option value="500">500</option>
+  <option value="600">600</option>
+  <option value="700">700</option>
+  <option value="800">800</option>
+  <option value="900">900</option>
+  <option value="1000">1000</option>
+  <option value="10000">10000</option>
+  <option value="100000">100000</option>
+</select>
+
+<button onclick="kirimPesan()" class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 rounded transition">
+  Pesan Sekarang via WA
+</button>
+
+  </div>
+</body>
+</html>

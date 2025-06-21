@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Top Up Free Fire</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .btn-back {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      color: #00ffe1;
+      font-size: 24px;
+      cursor: pointer;
+      font-weight: 600;
+      padding: 5px 10px;
+      transition: color 0.3s ease;
+      z-index: 1000;
+    }
+    .btn-back:hover {
+      color: #00c7b7;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 30px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: 600;
+      color: #00ffe1;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 20px;
+      font-size: 16px;
+      background-color: #1a1a2e;
+      color: white;
+      appearance: none;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #00ffe1;
+      color: #1a1a2e;
+      font-weight: 700;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #00c7b7;
+    }
+    .info {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #a0a0a0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<button
+  onclick="window.history.back()"
+  style="
+    position: fixed;
+    top: 25px;
+    right: 95px;
+    background: none;
+    border: none;
+    color: #00ffe1;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 5px;
+    user-select: none;
+    font-weight: 600;
+  "
+  aria-label="Kembali"
+>
+   ⬅️ Kembali 
+</button>
+  <div class="container">
+    <h1>Top Up Free Fire</h1>
+    <form id="topupForm" autocomplete="off">
+      <label for="playerId">Masukkan ID Player Free Fire</label>
+      <input
+        type="text"
+        id="playerId"
+        name="playerId"
+        placeholder="Contoh: 123456789"
+        required
+        maxlength="30"
+      />
+
+      <label for="nominal">Pilih Nominal Diamond</label>
+      <select id="nominal" name="nominal" required>
+        <option value="" disabled selected>-- Pilih Nominal --</option>
+        <option value="70">70 DM - Rp14.000</option>
+        <option value="100">100 DM - Rp18.000</option>
+        <option value="140">140 DM - Rp24.000</option>
+        <option value="160">160 DM - Rp30.000</option>
+        <option value="210">210 DM - Rp38.000</option>
+        <option value="260">260 DM - Rp47.000</option>
+        <option value="310">310 DM - Rp55.000</option>
+        <option value="355">355 DM - Rp58.000</option>
+        <option value="400">400 DM - Rp60.000</option>
+        <option value="470">470 DM - Rp65.000</option>
+        <option value="510">510 DM - Rp74.000</option>
+        <option value="560">560 DM - Rp96.000</option>
+        <option value="770">770 DM - Rp105.000</option>
+        <option value="800">800 DM - Rp125.000</option>
+        <option value="1000">1000 DM - Rp160.000</option>
+        <option value="MEM_M">MEM M - Rp35.000</option>
+        <option value="MEM_B">MEM B - Rp90.000</option>
+      </select>
+
+      <label for="metode">Pilih Metode Pembayaran</label>
+      <select id="metode" name="metode" required>
+        <option value="" disabled selected>-- Pilih Metode --</option>
+        <option value="qris">QRIS</option>
+        <option value="dana">DANA</option>
+        <option value="ovo">OVO</option>
+      </select>
+
+      <button type="submit">Beli Sekarang</button>
+    </form>
+    <div class="info">
+      * Pastikan ID Player benar.<br />
+      * Pembayaran akan diproses setelah klik tombol Top Up.<br />
+      * Hubungi admin jika ada masalah.
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('topupForm');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const playerId = form.playerId.value.trim();
+      const nominal = form.nominal.options[form.nominal.selectedIndex].text;
+      const metode = form.metode.value;
+
+      if (!playerId || !nominal || !metode) {
+        alert('Harap lengkapi semua data.');
+        return;
+      }
+
+      // Buat URL pembayaran
+      const urlPembayaran = `pembayaran.html?game=ff&playerId=${encodeURIComponent(playerId)}&nominal=${encodeURIComponent(nominal)}&metode=${metode}`;
+
+      // Info sebelum redirect
+      alert(`ID Player: ${playerId}\n${nominal}\nMetode: ${metode.toUpperCase()}\n\nAnda akan diarahkan ke halaman pembayaran.`);
+
+      // Redirect
+      window.location.href = urlPembayaran;
+    });
+  </script>
+</body>
+</html>

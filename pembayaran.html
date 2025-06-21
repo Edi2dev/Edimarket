@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pembayaran</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #00ffe1;
+      font-weight: 600;
+    }
+    .detail {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    button {
+      padding: 15px;
+      background-color: #00ffe1;
+      color: #1a1a2e;
+      font-weight: 700;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #00c7b7;
+    }
+    .payment-info {
+      margin-top: 25px;
+      text-align: left;
+      font-size: 15px;
+      color: #ffffffcc;
+    }
+    .qris img {
+      margin-top: 20px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .back-btn {
+      position: fixed;
+      top: 25px;
+      right: 95px;
+      background: none;
+      border: none;
+      color: #00ffe1;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 5px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="back-btn" onclick="window.history.back()">⬅️ Kembali</button>
+
+  <div class="container">
+    <h1>Pembayaran</h1>
+    <div class="detail" id="detailPembayaran">Memuat data...</div>
+
+    <button id="btnBayar">Bayar Sekarang</button>
+
+    <div class="payment-info">
+      <p><strong>DANA:</strong> 085808760688</p>
+      <p><strong>OVO:</strong> 085808760688</p>
+    </div>
+
+    <div class="qris">
+      <p class="mt-4">Atau scan QRIS (semua e-wallet):</p>
+      <a href="https://files.catbox.moe/22n638.jpg" target="_blank">
+        <img src="https://files.catbox.moe/22n638.jpg" alt="QRIS">
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const game = params.get('game');
+    const playerId = params.get('playerId');
+    const nominal = params.get('nominal');
+
+    const detailDiv = document.getElementById('detailPembayaran');
+
+    let gameName = 'Game';
+    if (game === 'ff') gameName = 'Free Fire';
+    else if (game === 'ml') gameName = 'Mobile Legends';
+
+    if (playerId && nominal) {
+      detailDiv.innerHTML = `
+        <strong>Game:</strong> ${gameName}<br/>
+        <strong>ID Player:</strong> ${playerId}<br/>
+        <strong>Nominal:</strong> ${nominal} Diamond
+      `;
+    } else {
+      detailDiv.innerHTML = "Data pembayaran tidak lengkap.";
+    }
+
+    // WhatsApp otomatis saat klik bayar
+    document.getElementById('btnBayar').addEventListener('click', () => {
+      const pesan = `Halo admin, saya sudah melakukan pembayaran untuk:\n\nGame: ${gameName}\nID: ${playerId}\nNominal: ${nominal} Diamond\n\nMohon dicek ya kak 🙏`;
+      const waUrl = `https://wa.me/6285808760688?text=${encodeURIComponent(pesan)}`;
+      window.open(waUrl, '_blank');
+    });
+  </script>
+
+</body>
+</html>

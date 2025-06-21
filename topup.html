@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Up Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+      color: #00ffe1;
+    }
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .menu a {
+      background-color: #1a1a2e;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      border: 1px solid #00ffe1;
+    }
+    .menu a:hover {
+      background-color: #00ffe1;
+      color: #1a1a2e;
+    }
+    .cara-penggunaan {
+      background-color: rgba(0, 255, 225, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #a0f0e8;
+    }
+    .cara-penggunaan h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #00ffe1;
+      font-weight: 600;
+    }
+    .cara-penggunaan ol {
+      padding-left: 20px;
+    }
+    .cara-penggunaan ol li {
+      margin-bottom: 12px;
+    }
+  
+  </style>
+</head>
+<body>
+  <button
+  onclick="window.history.back()"
+  style="
+    position: fixed;
+    top: 20px;
+    right: 220px;
+    background: none;
+    border: none;
+    color: #00ffe1;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 5px;
+    user-select: none;
+    font-weight: 600;
+  "
+  aria-label="Kembali"
+>
+   ⬅️ Kembali 
+</button>
+  <div class="container">
+    <h1>Top Up Game</h1>
+    <div class="menu">
+      <a href="ff.html">Free Fire</a>
+      <a href="mlbb.html">Mobile Legends</a>
+    </div>
+
+    <div class="cara-penggunaan">
+      <h2>Cara Penggunaan</h2>
+      <ol>
+        <li>Pilih game yang ingin kamu top up (Free Fire atau Mobile Legends).</li>
+        <li>Masukkan ID Player kamu dengan benar pada halaman top up.</li>
+        <li>Pilih nominal diamond sesuai kebutuhan kamu.</li>
+        <li>Klik tombol "Proses Top Up" untuk melanjutkan.</li>
+        <li>Ikuti instruksi pembayaran yang muncul untuk menyelesaikan transaksi.</li>
+        <li>Setelah pembayaran berhasil, diamond akan otomatis masuk ke akun kamu.</li>
+        <li>Jika ada masalah, hubungi admin untuk bantuan lebih lanjut.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

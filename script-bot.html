@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Script Bot - Edi Market</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    .btn {
+      background-color: #00ffe1;
+      color: #1a1a2e;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      padding: 8px 16px;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #1a1a2e;
+      color: #00ffe1;
+      border: 1px solid #00ffe1;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center px-4 py-8 text-white">
+
+  <button
+    onclick="window.history.back()"
+    style="
+      position: fixed;
+      top: 25px;
+      right: 230px;
+      background: none;
+      border: none;
+      color: #00ffe1;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 5px 5px;
+      user-select: none;
+      font-weight: 600;
+    "
+    aria-label="Kembali"
+  >
+    ⬅️ Kembali 
+  </button>
+
+  <div class="max-w-3xl w-full space-y-6">
+
+    <h1 class="text-2xl font-bold text-yellow-400 text-center mb-2">Script Bot</h1>
+    <p class="text-center text-sm text-white/80 mb-4">Pilihan script bot otomatis siap pakai. Bisa custom sesuai kebutuhanmu!</p>
+
+    <div class="card p-6">
+      <h2 class="text-xl font-semibold mb-1">Bot Push Kontak - <span class="text-green-300">Rp50.000</span></h2>
+      <p class="text-sm mb-3 text-white/80">Kirim pesan massal ke semua kontak secara otomatis. Cocok untuk promosi & notifikasi.</p>
+      <button onclick="window.location.href='pembayaran.html?produk=Bot Push Kontak&harga=50000'" class="btn">Beli Sekarang</button>
+    </div>
+
+    <div class="card p-6">
+      <h2 class="text-xl font-semibold mb-1">Bot Jaga Grup - <span class="text-green-300">Rp50.000</span></h2>
+      <p class="text-sm mb-3 text-white/80">Auto respon, anti spam, kick otomatis, deteksi toxic. Jaga komunitasmu tetap rapi.</p>
+      <button onclick="window.location.href='pembayaran.html?produk=Bot Jaga Grup&harga=50000'" class="btn">Beli Sekarang</button>
+    </div>
+
+    <div class="card p-6">
+      <h2 class="text-xl font-semibold mb-1">Bot Bug / Flood - <span class="text-green-300">Rp45.000</span></h2>
+      <p class="text-sm mb-3 text-white/80">Tool kirim spam teks / emoji / file untuk bug/crash ringan. Gunakan bijak.</p>
+      <button onclick="window.location.href='pembayaran.html?produk=Bot Bug / Flood&harga=45000'" class="btn">Beli Sekarang</button>
+    </div>
+
+    <div class="card p-6">
+      <h2 class="text-xl font-semibold mb-1">Custom Bot / Tambah Fitur - <span class="text-green-300">Rp70.000</span></h2>
+      <p class="text-sm mb-3 text-white/80">Mau fitur khusus? Kami siap bantu! Bisa request auto backup, antispam unik, dll.</p>
+      <button onclick="window.location.href='pembayaran.html?produk=Custom Bot&harga=70000'" class="btn">Request Sekarang</button>
+    </div>
+
+  </div>
+
+</body>
+</html>

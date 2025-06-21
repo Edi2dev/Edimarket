@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Edi Market</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    input::placeholder {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen text-white px-4">
+  <div class="card p-8 rounded-xl w-full max-w-md shadow-lg">
+    <h2 class="text-2xl font-bold mb-6 text-center text-yellow-400">Login ke Edi Market</h2>
+
+    <form onsubmit="return handleLogin(event)">
+      <div class="mb-4">
+        <label for="email" class="block mb-1 text-sm">Email</label>
+        <input type="email" id="email" required class="w-full p-3 rounded-lg bg-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="email@contoh.com">
+      </div>
+      <div class="mb-6">
+        <label for="password" class="block mb-1 text-sm">Password</label>
+        <input type="password" id="password" required class="w-full p-3 rounded-lg bg-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="••••••••">
+      </div>
+
+      <button type="submit" class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition">Login</button>
+    </form>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      {
+        alert("Login berhasil!");
+        localStorage.setItem("isLoggedIn", "true");
+        window.location.href = "index.html";
+      }
+    }
+  </script>
+</body>
+</html>

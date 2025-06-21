@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pilih Suntik Sosmed</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body 
+  class="bg-gradient-to-br from-gray-900 to-gray-800 text-white min-h-screen flex items-center justify-center px-4">
+<button
+  onclick="window.history.back()"
+  style="
+    position: fixed;
+    top: 25px;
+    right: 235px;
+    background: none;
+    border: none;
+    color: #00ffe1;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 5px;
+    user-select: none;
+    font-weight: 600;
+  "
+  aria-label="Kembali"
+>
+   ⬅️ Kembali 
+</button>
+  <div class="max-w-md w-full bg-gray-900 bg-opacity-60 p-6 rounded-2xl shadow-lg">
+    <h1 class="text-2xl font-bold text-center text-teal-400 mb-6">Pilih Suntik Sosmed</h1>
+
+    <div class="grid grid-cols-2 gap-6">
+      <!-- TikTok -->
+      <a href="suntik-tiktok.html" class="bg-gray-800 hover:bg-teal-600 transition-all duration-200 rounded-xl p-4 flex flex-col items-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" class="w-12 h-12 mb-2" />
+        <span class="text-lg font-semibold">TikTok</span>
+      </a>
+
+      <!-- Instagram -->
+      <a href="suntik-instagram.html" class="bg-gray-800 hover:bg-pink-500 transition-all duration-200 rounded-xl p-4 flex flex-col items-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="w-12 h-12 mb-2" />
+        <span class="text-lg font-semibold">Instagram</span>
+      </a>
+    </div>
+
+    <p class="text-center text-sm text-gray-400 mt-6">Powered by Edi Market</p>
+  </div>
+
+</body>
+</html>
